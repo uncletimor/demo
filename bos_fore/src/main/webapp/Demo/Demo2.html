@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/js/city-picker.min.js"></script>
+<script type="text/javascript" src="/js/city-picker.data.min.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
+<link   rel="stylesheet" type="text/css" href="/css/city-picker.css">
+<title>Insert title here</title>
+</head>
+<body>
+<div style="position: relative;">
+  <input name="sendAreaInfo" readonly type="text" data-toggle="city-picker">
+</div>
+<br>
+<br>
+<div style="position: relative;">
+  <input id="city-picker1" readonly type="text">
+  <input type="button" id="reset" value="重置">
+  <input type="button" id="init" value="初始化">
+  <script type="text/javascript">
+  	$("#city-picker1").citypicker();
+  	$("#reset").click(function(){
+  		//将citypicker插件清空
+  		$("#city-picker1").citypicker("reset");
+  	})
+  	$("#init").click(function(){
+  		//将citypicker插件清空
+  		$("#city-picker1").citypicker("reset");
+  		$("#city-picker1").citypicker("destroy");
+  		$("#city-picker1").citypicker({
+  			province:"北京市",
+  			city:"北京市",
+  			district:"朝阳区"
+  		});
+  	})
+  </script>
+</div>
+
+</body>
+</html>
